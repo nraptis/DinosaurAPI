@@ -18,6 +18,10 @@ extension Dinosaur: Identifiable {
     
 }
 
+extension Dinosaur: Sendable {
+    
+}
+
 extension Dinosaur: Hashable {
     public static func ==(lhs: Dinosaur, rhs: Dinosaur) -> Bool {
         lhs.id == rhs.id

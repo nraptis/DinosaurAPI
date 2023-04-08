@@ -25,6 +25,10 @@ extension PeriodDetails: Identifiable {
     
 }
 
+extension PeriodDetails: Sendable {
+    
+}
+
 extension PeriodDetails.Paragraph: Identifiable {
     
 }
@@ -36,4 +40,8 @@ extension PeriodDetails.Paragraph: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+}
+
+extension PeriodDetails.Paragraph: Sendable {
+    
 }

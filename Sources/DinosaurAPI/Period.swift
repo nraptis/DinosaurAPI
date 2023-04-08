@@ -12,3 +12,11 @@ public struct Period {
     public let name: String
     public let era: Era
 }
+
+extension Period: Identifiable {
+    
+}
+
+extension Period: Sendable {
+    
+}

@@ -25,6 +25,10 @@ extension DinosaurDetails: Identifiable {
     
 }
 
+extension DinosaurDetails: Sendable {
+    
+}
+
 extension DinosaurDetails.Paragraph: Identifiable {
     
 }
@@ -36,4 +40,8 @@ extension DinosaurDetails.Paragraph: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+}
+
+extension DinosaurDetails.Paragraph: Sendable {
+    
 }
