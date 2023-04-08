@@ -18,7 +18,7 @@ public actor DinosaurService {
         print("DinosaurService ==> Destroyed")
     }
     
-    func loadImage(fileName: String, fileExtension: String = "png") -> UIImage {
+    static func loadImage(fileName: String, fileExtension: String = "png") -> UIImage {
         if let image = UIImage(named: "\(fileName).\(fileExtension)", in: Bundle.module, with: .none) {
             return image
         }
@@ -73,12 +73,12 @@ public actor DinosaurService {
     }()
     
     lazy var triassicPeriod: Period = {
-        Period(id: 0, name: "Triassic", era: mesozoicEra)
+        Period(id: 0, name: "Triassic Period", timeSpan: "251.9 to 201.3 MYA", era: mesozoicEra)
     }()
     
     lazy var triassicDetails: PeriodDetails = {
         
-        let image = loadImage(fileName: "triassic_image")
+        let image = Self.loadImage(fileName: "triassic_image")
         
         let p1 = "The Triassic is a geologic period and system which spans 50.6 million years from the end of the Permian Period 251.902 million years ago (Mya), to the beginning of the Jurassic Period 201.36 Mya. The Triassic is the first and shortest period of the Mesozoic Era. Both the start and end of the period are marked by major extinction events. The Triassic Period is subdivided into three epochs: Early Triassic, Middle Triassic and Late Triassic."
         
@@ -99,12 +99,12 @@ public actor DinosaurService {
     }()
     
     lazy var jurassicPeriod: Period = {
-        Period(id: 1, name: "Jurassic", era: mesozoicEra)
+        Period(id: 1, name: "Jurassic Period", timeSpan: "201.3 to 145.0 MYA", era: mesozoicEra)
     }()
     
     lazy var jurassicDetails: PeriodDetails = {
         
-        let image = loadImage(fileName: "jurassic_image")
+        let image = Self.loadImage(fileName: "jurassic_image")
         
         let p1 = "The Jurassic is a geologic period and stratigraphic system that spanned from the end of the Triassic Period 201.4 million years ago (Mya) to the beginning of the Cretaceous Period, approximately 145 Mya. The Jurassic constitutes the middle period of the Mesozoic Era and is named after the Jura Mountains, where limestone strata from the period were first identified."
         
@@ -125,12 +125,12 @@ public actor DinosaurService {
     }()
     
     lazy var cretaciousPeriod: Period = {
-        Period(id: 2, name: "Cretacious", era: mesozoicEra)
+        Period(id: 2, name: "Cretacious Period", timeSpan: "145.0 to 66.0 MYA", era: mesozoicEra)
     }()
     
     lazy var cretaciousDetails: PeriodDetails = {
         
-        let image = loadImage(fileName: "cretacious_image")
+        let image = Self.loadImage(fileName: "cretacious_image")
         
         let p1 = "The Cretaceous is a geological period that lasted from about 145 to 66 million years ago (Mya). It is the third and final period of the Mesozoic Era, as well as the longest. At around 79 million years, it is the longest geological period of the entire Phanerozoic. The name is derived from the Latin creta, \"chalk\", which is abundant in the latter half of the period. It is usually abbreviated K, for its German translation Kreide."
         
@@ -151,7 +151,7 @@ public actor DinosaurService {
     }()
     
     lazy var tyrannosaurus: Dinosaur = {
-        let thumb = loadImage(fileName: "tyrannosaurus_thumb")
+        let thumb = Self.loadImage(fileName: "tyrannosaurus_thumb")
         return Dinosaur(id: 0,
                         name: "Tyrannosaurus Rex",
                         meaning: "Tyrant Lizard King",
@@ -160,7 +160,7 @@ public actor DinosaurService {
     
     lazy var tyrannosaurusDetails: DinosaurDetails = {
         
-        let image = loadImage(fileName: "tyrannosaurus_image")
+        let image = Self.loadImage(fileName: "tyrannosaurus_image")
         
         let p1 = "Tyrannosaurus is a genus of large theropod dinosaur. The species Tyrannosaurus rex (rex meaning \"kin\" in Latin), often called T. rex or colloquially T-Rex, is one of the best represented theropods. It lived throughout what is now western North America, on what was then an island continent known as Laramidia. Tyrannosaurus had a much wider range than other tyrannosaurids. Fossils are found in a variety of rock formations dating to the Maastrichtian age of the Upper Cretaceous period, 68 to 66 million years ago. It was the last known member of the tyrannosaurids and among the last non-avian dinosaurs to exist before the Cretaceous–Paleogene extinction event."
         
@@ -182,7 +182,7 @@ public actor DinosaurService {
     
     
     lazy var triceratops: Dinosaur = {
-        let thumb = loadImage(fileName: "triceratops_thumb")
+        let thumb = Self.loadImage(fileName: "triceratops_thumb")
         return Dinosaur(id: 1,
                         name: "Triceratops",
                         meaning: "Three-Horned Face",
@@ -191,7 +191,7 @@ public actor DinosaurService {
     
     lazy var triceratopsDetails: DinosaurDetails = {
         
-        let image = loadImage(fileName: "triceratops_image")
+        let image = Self.loadImage(fileName: "triceratops_image")
         
         let p1 = "Triceratops is a genus of herbivorous chasmosaurine ceratopsid dinosaur that first appeared during the late Maastrichtian stage of the Late Cretaceous period, about 68 million years ago in what is now North America. It is one of the last-known non-avian dinosaur genera, and became extinct in the Cretaceous–Paleogene extinction event 66 million years ago. The name Triceratops, which literally means 'three-horned face', is derived from the Greek words trí- (τρί-) meaning 'three', kéras (κέρας) meaning 'horn', and ṓps (ὤψ) meaning 'face'."
         
@@ -212,7 +212,7 @@ public actor DinosaurService {
     }()
     
     lazy var brachiosaurus: Dinosaur = {
-        let thumb = loadImage(fileName: "brachiosaurus_thumb")
+        let thumb = Self.loadImage(fileName: "brachiosaurus_thumb")
         return Dinosaur(id: 2,
                         name: "Brachiosaurus Altithorax",
                         meaning: "Deep Chested Arm Lizard",
@@ -221,7 +221,7 @@ public actor DinosaurService {
     
     lazy var brachiosaurusDetails: DinosaurDetails = {
         
-        let image = loadImage(fileName: "brachiosaurus_image")
+        let image = Self.loadImage(fileName: "brachiosaurus_image")
         
         let p1 = "Brachiosaurus is a genus of sauropod dinosaur that lived in North America during the Late Jurassic, about 154 to 150 million years ago. It was first described by American paleontologist Elmer S. Riggs in 1903 from fossils found in the Colorado River valley in western Colorado, United States. Riggs named the dinosaur Brachiosaurus altithorax; the generic name is Greek for \"arm lizard\", in reference to its proportionately long arms, and the specific name means \"deep chest\". Brachiosaurus is estimated to have been between 18 and 22 meters (59 and 72 ft) long; body mass estimates of the subadult holotype specimen range from 28.3 to 46.9 metric tons (31.2 and 51.7 short tons). It had a disproportionately long neck, small skull, and large overall size, all of which are typical for sauropods. Atypically, Brachiosaurus had longer forelimbs than hindlimbs, which resulted in a steeply inclined trunk, and a proportionally shorter tail."
         
@@ -235,11 +235,11 @@ public actor DinosaurService {
         paragraphs.append(DinosaurDetails.Paragraph(id: 1, text: p2))
         paragraphs.append(DinosaurDetails.Paragraph(id: 2, text: p3))
         
-        return DinosaurDetails(id: brachiosaurus.id, image: image, paragraphs: paragraphs, period: cretaciousPeriod)
+        return DinosaurDetails(id: brachiosaurus.id, image: image, paragraphs: paragraphs, period: jurassicPeriod)
     }()
     
     lazy var stegosaurus: Dinosaur = {
-        let thumb = loadImage(fileName: "stegosaurus_thumb")
+        let thumb = Self.loadImage(fileName: "stegosaurus_thumb")
         return Dinosaur(id: 3,
                         name: "Stegosaurus Stenops",
                         meaning: "Narrow-Faced Roof Lizard",
@@ -248,7 +248,7 @@ public actor DinosaurService {
     
     lazy var stegosaurusDetails: DinosaurDetails = {
         
-        let image = loadImage(fileName: "stegosaurus_image")
+        let image = Self.loadImage(fileName: "stegosaurus_image")
         
         let p1 = "Stegosaurus is a genus of herbivorous, four-legged, armored dinosaur from the Late Jurassic, characterized by the distinctive kite-shaped upright plates along their backs and spikes on their tails. Fossils of the genus have been found in the western United States and in Portugal, where they are found in Kimmeridgian- to Tithonian-aged strata, dating to between 155 and 145 million years ago. Of the species that have been classified in the upper Morrison Formation of the western US, only three are universally recognized: S. stenops, S. ungulatus and S. sulcatus. The remains of over 80 individual animals of this genus have been found. Stegosaurus would have lived alongside dinosaurs such as Apatosaurus, Diplodocus, Camarasaurus and Allosaurus, the latter of which may have preyed on it."
         
@@ -262,11 +262,11 @@ public actor DinosaurService {
         paragraphs.append(DinosaurDetails.Paragraph(id: 1, text: p2))
         paragraphs.append(DinosaurDetails.Paragraph(id: 2, text: p3))
         
-        return DinosaurDetails(id: stegosaurus.id, image: image, paragraphs: paragraphs, period: cretaciousPeriod)
+        return DinosaurDetails(id: stegosaurus.id, image: image, paragraphs: paragraphs, period: jurassicPeriod)
     }()
     
     lazy var coelophysis: Dinosaur = {
-        let thumb = loadImage(fileName: "coelophysis_thumb")
+        let thumb = Self.loadImage(fileName: "coelophysis_thumb")
         return Dinosaur(id: 4,
                         name: "Coelophysis",
                         meaning: "Hollow Form",
@@ -275,7 +275,7 @@ public actor DinosaurService {
     
     lazy var coelophysisDetails: DinosaurDetails = {
         
-        let image = loadImage(fileName: "coelophysis_image")
+        let image = Self.loadImage(fileName: "coelophysis_image")
         
         let p1 = "Coelophysis is an extinct genus of coelophysid theropod dinosaur that lived approximately 228 to 201.3 million years ago during the latter part of the Triassic Period from the Carnian and Rhaetian faunal stages in what is now the southwestern United States. Megapnosaurus was once considered a species within this genus, but this interpretation has been challenged since 2017 and the genus Megapnosaurus is now considered valid."
         
@@ -289,11 +289,11 @@ public actor DinosaurService {
         paragraphs.append(DinosaurDetails.Paragraph(id: 1, text: p2))
         paragraphs.append(DinosaurDetails.Paragraph(id: 2, text: p3))
         
-        return DinosaurDetails(id: coelophysis.id, image: image, paragraphs: paragraphs, period: cretaciousPeriod)
+        return DinosaurDetails(id: coelophysis.id, image: image, paragraphs: paragraphs, period: triassicPeriod)
     }()
     
     lazy var plateosaurus: Dinosaur = {
-        let thumb = loadImage(fileName: "plateosaurus_thumb")
+        let thumb = Self.loadImage(fileName: "plateosaurus_thumb")
         return Dinosaur(id: 5,
                         name: "Plateosaurus",
                         meaning: "Broad Lizard / Flat Lizard",
@@ -302,7 +302,7 @@ public actor DinosaurService {
     
     lazy var plateosaurusDetails: DinosaurDetails = {
         
-        let image = loadImage(fileName: "plateosaurus_image")
+        let image = Self.loadImage(fileName: "plateosaurus_image")
         
         let p1 = "Plateosaurus (probably meaning \"broad lizard\", often mistranslated as \"flat lizard\") is a genus of plateosaurid dinosaur that lived during the Late Triassic period, around 214 to 204 million years ago, in what is now Central and Northern Europe. Plateosaurus is a basal (early) sauropodomorph dinosaur, a so-called \"prosauropod\". The type species is Plateosaurus trossingensis; before 2019, that honor was given to Plateosaurus engelhardti, but it was ruled as undiagnostic (i.e. indistinguishable from other dinosaurs) by the ICZN. Currently, there are three valid species; in addition to P. trossingensis, P. longiceps and P. gracilis are also known. However, others have been assigned in the past, and there is no broad consensus on the species taxonomy of plateosaurid dinosaurs. Similarly, there are a plethora of synonyms (invalid duplicate names) at the genus level."
         
@@ -319,7 +319,7 @@ public actor DinosaurService {
         paragraphs.append(DinosaurDetails.Paragraph(id: 2, text: p3))
         paragraphs.append(DinosaurDetails.Paragraph(id: 3, text: p4))
         
-        return DinosaurDetails(id: plateosaurus.id, image: image, paragraphs: paragraphs, period: cretaciousPeriod)
+        return DinosaurDetails(id: plateosaurus.id, image: image, paragraphs: paragraphs, period: triassicPeriod)
     }()
     
 }

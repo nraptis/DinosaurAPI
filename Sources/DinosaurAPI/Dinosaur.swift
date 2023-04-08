@@ -30,3 +30,13 @@ extension Dinosaur: Hashable {
         hasher.combine(id)
     }
 }
+
+extension Dinosaur {
+    public static func mock() -> Dinosaur {
+        let thumb = DinosaurService.loadImage(fileName: "tyrannosaurus_thumb")
+        return Dinosaur(id: 0,
+                        name: "Tyrannosaurus Rex",
+                        meaning: "Tyrant Lizard King",
+                        thumb: thumb)
+    }
+}

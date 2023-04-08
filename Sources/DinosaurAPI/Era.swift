@@ -19,3 +19,9 @@ extension Era: Identifiable {
 extension Era: Sendable {
     
 }
+
+extension Era {
+    public static func mock() -> Era {
+        Era(id: 0, name: "Mesozoic")
+    }
+}
