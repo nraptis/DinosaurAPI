@@ -11,3 +11,11 @@ public struct Era {
     public let id: Int
     public let name: String
 }
+
+extension Era: Identifiable {
+    
+}
+
+extension Era: Sendable {
+    
+}
