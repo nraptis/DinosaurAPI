@@ -22,6 +22,15 @@ extension Period: Sendable {
     
 }
 
+extension Period: Hashable {
+    public static func == (lhs: Period, rhs: Period) -> Bool {
+        lhs.id == rhs.id
+    }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 extension Period {
     public static func mock() -> Period {
         let era = Era(id: 0, name: "Mesozoic")

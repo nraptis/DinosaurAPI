@@ -20,6 +20,15 @@ extension Era: Sendable {
     
 }
 
+extension Era: Hashable {
+    public static func == (lhs: Era, rhs: Era) -> Bool {
+        lhs.id == rhs.id
+    }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 extension Era {
     public static func mock() -> Era {
         Era(id: 0, name: "Mesozoic")
